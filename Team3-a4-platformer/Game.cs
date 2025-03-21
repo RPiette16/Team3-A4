@@ -58,6 +58,32 @@ public class Game
     {
         switch (currentState)
         {
+
+            case GameState.Win:
+                Window.ClearBackground(Color.Green);
+                Text.Draw("You Win!", 400, 300);
+                if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
+                {
+                    Setup();
+                    currentState = GameState.Running;
+                    player.X = 10;
+                    player.Y = 500;// Reset game if enter is pressed 
+                }
+                return;
+
+
+            case GameState.GameOver:
+                Window.ClearBackground(Color.Red);
+                Text.Draw("Game Over!", 400, 300);
+                if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
+                {
+                    Setup();
+                    currentState = GameState.Running;
+                    player.X = 10;
+                    player.Y = 500;
+                }
+                return;
+
             case GameState.Running:
                 Window.ClearBackground(Color.Black);
                 player.renderPlayer();
@@ -77,16 +103,6 @@ public class Game
                 }
                 break;
 
-            case GameState.Win:
-                Window.ClearBackground(Color.Green);
-                Text.Draw("You Win!", 400, 300);
-                break;
-
-
-            case GameState.GameOver:
-                Window.ClearBackground(Color.Red);
-                Text.Draw("Game Over!", 400, 300);
-                break;
         }
     }
     public void renderGoal()
@@ -104,6 +120,15 @@ public class Game
         if (IsCollidingWithGoal(goalX, goalY, goalWidth, goalHeight))
         {
             currentState = GameState.Win;
+            if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
+            {
+                Setup();
+                currentState = GameState.Running;
+                player.X = 10;
+                player.Y = 500;
+            }
+            return;
+
         }
     }
     public bool IsCollidingWithGoal(int goalX, int goalY, int goalWidth, int goalHeight)
