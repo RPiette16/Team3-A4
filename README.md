@@ -1,5 +1,5 @@
 # Team3-A4
-Rob - added New enemy movement and fixed collision glitch, 
-Suzanne - 
+Rob - add New enemy movement and fixed collision glitch, 
+Suzanne - add restart function,  
 Asra - 
 Trinity - 
