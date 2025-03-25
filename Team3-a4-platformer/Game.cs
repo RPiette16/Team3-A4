@@ -16,6 +16,7 @@ public enum GameState
 /// </summary>
 public class Game
 {
+    Texture2D BG = Graphics.LoadTexture("../../../assets/BG.png");
     public GameState currentState = GameState.Running;
     // Place your variables here:
     Player player = new Player();
@@ -56,6 +57,8 @@ public class Game
     /// </summary>
     public void Update()
     {
+   
+        
         int controllerIndex = 0;
         switch (currentState)
         {
@@ -115,6 +118,7 @@ public class Game
 
             case GameState.Running:
                 Window.ClearBackground(Color.Black);
+                Graphics.Draw(BG, 0, 0);
                 player.renderPlayer();
                 enemy.renderEnemy();
                 enemy.enemyPosition();
