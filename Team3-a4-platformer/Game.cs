@@ -21,7 +21,7 @@ public class Game
     Player player = new Player();
     Enemy enemy = new Enemy();
     Platform platform = new Platform(0, 0, 0, 0);
-
+    
     // list of platforms
     Platform[] platforms = new Platform[]
     {
@@ -56,6 +56,7 @@ public class Game
     /// </summary>
     public void Update()
     {
+        int controllerIndex = 0;
         switch (currentState)
         {
 
@@ -67,10 +68,16 @@ public class Game
                 Text.Draw("You Win!", 260, 200, Text_Winner);
 
                 Text.Size = 30;
-                Text.Draw("Press [ENTER] to play again!", 200, 280, Text_Winner);
-
+                Text.Draw("Press [ENTER] or [O] to play again!", 200, 280, Text_Winner);
                 // Reset game if enter is pressed
                 if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
+                {
+                    Setup();
+                    currentState = GameState.Running;
+                    player.X = 10;
+                    player.Y = 500;
+                }
+                if (Input.IsControllerButtonPressed(controllerIndex, ControllerButton.RightFaceDown))
                 {
                     Setup();
                     currentState = GameState.Running;
@@ -86,11 +93,18 @@ public class Game
                 Text.Size = 50;
                 Font Text_GameOver = Text.LoadFont("../../../assets/Pixellari.ttf");
                 Text.Draw("Game Over!", 260, 200, Text_GameOver);
-                
+
                 Text.Size = 30;
-                Text.Draw("Press [ENTER] to play again!", 200, 280, Text_GameOver);
+                Text.Draw("Press [ENTER] or [O] to play again!", 200, 280, Text_GameOver);
                 // Reset game if enter is pressed
                 if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
+                {
+                    Setup();
+                    currentState = GameState.Running;
+                    player.X = 10;
+                    player.Y = 500;
+                }
+                if (Input.IsControllerButtonDown(controllerIndex, ControllerButton.RightFaceDown))
                 {
                     Setup();
                     currentState = GameState.Running;
@@ -126,7 +140,7 @@ public class Game
         int goalY = 0;
         int goalWidth = 50;
         int goalHeight = 50;
-
+        int controllerIndex = 0;
         // Draw the goal
         Draw.FillColor = Color.Green;
         Draw.Rectangle(goalX, goalY, goalWidth, goalHeight);
@@ -136,6 +150,13 @@ public class Game
         {
             currentState = GameState.Win;
             if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
+            {
+                Setup();
+                currentState = GameState.Running;
+                player.X = 10;
+                player.Y = 500;
+            }
+            if (Input.IsControllerButtonDown(controllerIndex, ControllerButton.RightFaceDown))
             {
                 Setup();
                 currentState = GameState.Running;
@@ -160,9 +181,3 @@ public class Game
         return false;
     }
 }
-
-
-
-
-
-
