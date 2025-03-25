@@ -2,7 +2,7 @@
 
 Rob - add New enemy movement and fixed collision glitch, 
 
-Suzanne - add restart function, add audio clips, 
+Suzanne - add restart game function on winner and game over screen, load fonts to game
 
 Asra - 
 
