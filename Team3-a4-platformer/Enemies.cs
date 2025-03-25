@@ -9,6 +9,7 @@ namespace MohawkGame2D
 {
     public class Enemy
     {
+        Texture2D Slime = Graphics.LoadTexture("../../../assets/Slime.png");
         float y;
         float x;
         float speed = 200;
@@ -24,6 +25,7 @@ namespace MohawkGame2D
         // Update the position of the enemy based on DeltaTime and direction
         public void enemyPosition()
         {
+            
 
             y += Time.DeltaTime * speed * direction;
 
@@ -80,7 +82,7 @@ namespace MohawkGame2D
         public bool CheckCollisionWithPlayer(Player player)
         {
             // Get the bounding box for each enemy triangle
-            BoundingBox enemyBox1 = GetBoundingBox((int)(125 + x), 500, (int)(140 + x), 530, (int)(110 + x), 530);
+            BoundingBox enemyBox1 = GetBoundingBox((int)(140 + x), 500, (int)(140 + x), 500, (int)(210 + x), 540);
             BoundingBox enemyBox2 = GetBoundingBox((int)(125 + x), 55, (int)(140 + x), 85, (int)(110 + x), 85);
             BoundingBox enemyBox3 = GetBoundingBox(225, (int)(0 + y), 240, (int)(30 + y), 210, (int)(30 + y));
             BoundingBox enemyBox4 = GetBoundingBox(325, (int)(0 + y), 340, (int)(30 + y), 310, (int)(30 + y));
@@ -107,14 +109,17 @@ namespace MohawkGame2D
 
         public void renderEnemy()
         {
+        
+        Draw.FillColor = Color.Red;
 
-            Draw.FillColor = Color.Red;
-            Draw.Triangle(125 + x, 500, 140 + x, 530, 110 + x, 530);
-            Draw.Triangle(125 + x, 50, 140 + x, 80, 110 + x, 80);
-            Draw.Triangle(225, 0 + y, 240, 30 + y, 210, 30 + y);
-            Draw.Triangle(325, 0 + y, 340, 30 + y, 310, 30 + y);
-            Draw.Triangle(525, 0 + y, 540, 30 + y, 510, 30 + y);
-            Draw.Triangle(625, 0 + y, 640, 30 + y, 610, 30 + y);
+        Graphics.Draw (Slime, 125 + x, 470);
+        Draw.Triangle(125 + x, 50, 140 + x, 80, 110 + x, 80);
+        Draw.Triangle(225, 0 + y, 240, 30 + y, 210, 30 + y);
+        Draw.Triangle(325, 0 + y, 340, 30 + y, 310, 30 + y);
+        Draw.Triangle(525, 0 + y, 540, 30 + y, 510, 30 + y);
+        Draw.Triangle(625, 0 + y, 640, 30 + y, 610, 30 + y); 
+
+        
         }
 
     }
