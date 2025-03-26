@@ -30,7 +30,7 @@ namespace MohawkGame2D
         {
             Draw.FillColor = Color.Magenta;
             Draw.Rectangle(X, Y, Width, Height);
-            Graphics.Draw(playersprite, Width, Height);
+            Graphics.Draw(playersprite, X, Y);
         }
 
         public void movePlayer()
