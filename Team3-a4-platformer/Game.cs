@@ -21,28 +21,28 @@ public class Game
     Player player = new Player();
     Enemy enemy = new Enemy();
     Platform platform = new Platform(0, 0, 0, 0);
-
+    
     // list of platforms
     Platform[] platforms = new Platform[]
     {
-        new Platform(0, 550, 100, 50),
-        new Platform(150, 450, 50, 50),
-        new Platform(250, 550, 50, 50),
-        new Platform(350, 500, 50, 50),
-        new Platform(400, 400, 100, 50),
-        new Platform(550, 550, 200, 50),
+        new Platform(0, 550, 50, 50),
+        new Platform(100, 450, 50, 50),
+        new Platform(150, 550, 150, 50),
+        new Platform(200, 350, 50, 50),
+        new Platform(350, 450, 50, 50),
+        new Platform(500, 550, 300, 50),
         new Platform(750, 450, 50, 50),
         new Platform(650, 400, 50, 50),
-        new Platform(750, 300, 50, 50),
-        new Platform(650, 250, 50, 50),
-        new Platform(750, 150, 50, 50),
-        new Platform(650, 50, 50, 50),
-        new Platform(550, 100, 50, 50),
-        new Platform(450, 50, 50, 50),
+        new Platform(550, 350, 50, 50),
+        new Platform(400, 300, 50, 50),
+        new Platform(500, 200, 50, 50),
+        new Platform(600, 150, 50, 50),
+        new Platform(450, 50, 150, 50),
         new Platform(350, 100, 50, 50),
-        new Platform(250, 50, 50, 50),
-        new Platform(50, 100, 200, 50),
-        new Platform(0, 50, 50, 50),
+        new Platform(250, 100, 50, 50),
+        new Platform(150, 100, 50, 50),
+        new Platform(150, 100, 50, 50),
+        new Platform(50, 100, 50, 50),
     };
     public void Setup()
     {
@@ -56,6 +56,7 @@ public class Game
     /// </summary>
     public void Update()
     {
+        int controllerIndex = 0;
         switch (currentState)
         {
 
@@ -63,14 +64,20 @@ public class Game
                 Window.ClearBackground(Color.Green);
                 Text.Color = Color.White;
                 Text.Size = 50;
-                Font Text_Winner = Text.LoadFont("../../../assets/FANTASYMAGIST.otf");
-                Text.Draw("You Win!", 300, 200, Text_Winner);
+                Font Text_Winner = Text.LoadFont("../../../assets/Pixellari.ttf");
+                Text.Draw("You Win!", 260, 200, Text_Winner);
 
                 Text.Size = 30;
-                Text.Draw("Press [ENTER] to play again!", 250, 280, Text_Winner);
-
+                Text.Draw("Press [ENTER] or [O] to play again!", 200, 280, Text_Winner);
                 // Reset game if enter is pressed
                 if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
+                {
+                    Setup();
+                    currentState = GameState.Running;
+                    player.X = 10;
+                    player.Y = 500;
+                }
+                if (Input.IsControllerButtonPressed(controllerIndex, ControllerButton.RightFaceDown))
                 {
                     Setup();
                     currentState = GameState.Running;
@@ -84,13 +91,20 @@ public class Game
                 Window.ClearBackground(Color.Red);
                 Text.Color = Color.White;
                 Text.Size = 50;
-                Font Text_GameOver = Text.LoadFont("../../../assets/FANTASYMAGIST.otf");
-                Text.Draw("Game Over!", 300, 200, Text_GameOver);
-                
+                Font Text_GameOver = Text.LoadFont("../../../assets/Pixellari.ttf");
+                Text.Draw("Game Over!", 260, 200, Text_GameOver);
+
                 Text.Size = 30;
-                Text.Draw("Press [ENTER] to play again!", 250, 280, Text_GameOver);
+                Text.Draw("Press [ENTER] or [O] to play again!", 200, 280, Text_GameOver);
                 // Reset game if enter is pressed
                 if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
+                {
+                    Setup();
+                    currentState = GameState.Running;
+                    player.X = 10;
+                    player.Y = 500;
+                }
+                if (Input.IsControllerButtonDown(controllerIndex, ControllerButton.RightFaceDown))
                 {
                     Setup();
                     currentState = GameState.Running;
@@ -126,7 +140,7 @@ public class Game
         int goalY = 0;
         int goalWidth = 50;
         int goalHeight = 50;
-
+        int controllerIndex = 0;
         // Draw the goal
         Draw.FillColor = Color.Green;
         Draw.Rectangle(goalX, goalY, goalWidth, goalHeight);
@@ -136,6 +150,13 @@ public class Game
         {
             currentState = GameState.Win;
             if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
+            {
+                Setup();
+                currentState = GameState.Running;
+                player.X = 10;
+                player.Y = 500;
+            }
+            if (Input.IsControllerButtonDown(controllerIndex, ControllerButton.RightFaceDown))
             {
                 Setup();
                 currentState = GameState.Running;
@@ -160,9 +181,3 @@ public class Game
         return false;
     }
 }
-
-
-
-
-
-
