@@ -1,10 +1,11 @@
 # 🗡️ Team3-A4 — *Dungeon Hopper*
 
-Welcome to our game, adventurer! Your goal is to make it to the top of the floating platforms and retrieve the legendary sword. But beware—falling below the platforms or running into enemies will end your journey.
+Welcome to our game, adventurer! Your goal is to make it to the top of the floating platforms and retrieve the legendary sword. But beware, falling below the platforms or running into enemies will end your journey.
 
 Use the **left** and **right arrow keys** to move, and **spacebar** to jump.  
 Using a controller? Move with the **left analog stick** and jump with any **face button**.  
-Good luck—and don’t look down.
+Good luck!!
+and don’t look down.
 
 ---
 
