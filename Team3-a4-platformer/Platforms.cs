@@ -9,6 +9,7 @@ namespace MohawkGame2D
 {
     public class Platform
     {
+        Texture2D wood = Graphics.LoadTexture("../../../assets/wood.png");
         public int X { get; set; }
         public int Y { get; set; }
         public int Width { get; set; }
@@ -49,6 +50,7 @@ namespace MohawkGame2D
             {
                 Draw.FillColor = Color.DarkGray;
                 Draw.Rectangle(platform.X, platform.Y, platform.Width, platform.Height);
+                Graphics.Draw(wood, platform.X, platform.Y);
             }
         }
 
