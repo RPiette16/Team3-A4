@@ -82,7 +82,7 @@ namespace MohawkGame2D
         public bool CheckCollisionWithPlayer(Player player)
         {
             // Get the bounding box for each enemy triangle
-            BoundingBox enemyBox1 = GetBoundingBox((int)(140 + x), 500, (int)(140 + x), 500, (int)(210 + x), 540);
+            BoundingBox enemyBox1 = GetBoundingBox((int)(125 + x), 500, (int)(140 + x), 530, (int)(110 + x), 530);
             BoundingBox enemyBox2 = GetBoundingBox((int)(125 + x), 55, (int)(140 + x), 85, (int)(110 + x), 85);
             BoundingBox enemyBox3 = GetBoundingBox(225, (int)(0 + y), 240, (int)(30 + y), 210, (int)(30 + y));
             BoundingBox enemyBox4 = GetBoundingBox(325, (int)(0 + y), 340, (int)(30 + y), 310, (int)(30 + y));

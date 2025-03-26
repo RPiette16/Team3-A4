@@ -7,8 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6af4c900-383b-4270-9eaa-caad6a30c8cb" name="Changes" comment="- added sword&#10;- made vertical enemies comments to be able to run game without errors&#10;- NOTHING IS IN THE RIGHT SPOT.">
-      <change beforePath="$PROJECT_DIR$/Platforms.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Platforms.cs" afterDir="false" />
+    <list default="true" id="6af4c900-383b-4270-9eaa-caad6a30c8cb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Team3-a4-platformer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Team3-a4-platformer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemies.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Enemies.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Slime.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Slime.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +98,8 @@
       <option name="presentableId" value="Default" />
       <updated>1736868064540</updated>
       <workItem from="1736868064754" duration="734000" />
-      <workItem from="1742913656420" duration="14214000" />
+      <workItem from="1742913656420" duration="15180000" />
+      <workItem from="1742994913259" duration="456000" />
     </task>
     <task id="LOCAL-00001" summary="- added background to game state running">
       <option name="closed" value="true" />
@@ -138,7 +141,23 @@
       <option name="project" value="LOCAL" />
       <updated>1742991977745</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- swapped out wood texture for stone texture&#10;- resized stone so the squares look great&#10;- the long plateforms still look odd">
+      <option name="closed" value="true" />
+      <created>1742993875745</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742993875745</updated>
+    </task>
+    <task id="LOCAL-00007" summary="- sword resized&#10;- sword retextured">
+      <option name="closed" value="true" />
+      <created>1742994435938</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742994435938</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +172,8 @@
     <MESSAGE value="- added wood textures (not positioned correctly)" />
     <MESSAGE value="- slimes all added&#10;- vertical slimes are not working as of right now" />
     <MESSAGE value="- added sword&#10;- made vertical enemies comments to be able to run game without errors&#10;- NOTHING IS IN THE RIGHT SPOT." />
-    <option name="LAST_COMMIT_MESSAGE" value="- added sword&#10;- made vertical enemies comments to be able to run game without errors&#10;- NOTHING IS IN THE RIGHT SPOT." />
+    <MESSAGE value="- swapped out wood texture for stone texture&#10;- resized stone so the squares look great&#10;- the long plateforms still look odd" />
+    <MESSAGE value="- sword resized&#10;- sword retextured" />
+    <option name="LAST_COMMIT_MESSAGE" value="- sword resized&#10;- sword retextured" />
   </component>
 </project>
