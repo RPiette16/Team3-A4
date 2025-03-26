@@ -64,11 +64,11 @@ public class Game
                 Window.ClearBackground(Color.Green);
                 Text.Color = Color.White;
                 Text.Size = 50;
-                Font Text_Winner = Text.LoadFont("../../../assets/Pixellari.ttf");
-                Text.Draw("You Win!", 260, 200, Text_Winner);
+                Font Text_Winner = Text.LoadFont("../../../assets/FANTASYMAGIST.otf");
+                Text.Draw("You Win!", 300, 200, Text_Winner);
 
                 Text.Size = 30;
-                Text.Draw("Press [ENTER] or [O] to play again!", 200, 280, Text_Winner);
+                Text.Draw("Press [ENTER] or [O] to play again!", 220, 280, Text_Winner);
                 // Reset game if enter is pressed
                 if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
                 {
@@ -91,11 +91,11 @@ public class Game
                 Window.ClearBackground(Color.Red);
                 Text.Color = Color.White;
                 Text.Size = 50;
-                Font Text_GameOver = Text.LoadFont("../../../assets/Pixellari.ttf");
-                Text.Draw("Game Over!", 260, 200, Text_GameOver);
+                Font Text_GameOver = Text.LoadFont("../../../assets/FANTASYMAGIST.otf");
+                Text.Draw("Game Over!", 300, 200, Text_GameOver);
 
                 Text.Size = 30;
-                Text.Draw("Press [ENTER] or [O] to play again!", 200, 280, Text_GameOver);
+                Text.Draw("Press [ENTER] or [O] to play again!", 220, 280, Text_GameOver);
                 // Reset game if enter is pressed
                 if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
                 {
