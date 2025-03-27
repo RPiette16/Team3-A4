@@ -9,6 +9,7 @@ namespace MohawkGame2D
 {
     public class Player
     {
+        Texture2D playersprite = Graphics.LoadTexture("../../../assets/playersprite.png");
         public int X { get; set; }
         public int Y { get; set; }
         public int Width { get; set; }
@@ -29,6 +30,7 @@ namespace MohawkGame2D
         {
             Draw.FillColor = Color.Magenta;
             Draw.Rectangle(X, Y, Width, Height);
+            Graphics.Draw(playersprite, X, Y);
         }
 
         public void movePlayer()
