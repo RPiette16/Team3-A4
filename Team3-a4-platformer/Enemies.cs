@@ -24,6 +24,7 @@ namespace MohawkGame2D
         // Update the position of the enemy based on DeltaTime and direction
         public void enemyPosition()
         {
+            
 
 
             y += Time.DeltaTime * speed * direction;
@@ -108,17 +109,18 @@ namespace MohawkGame2D
 
         public void renderEnemy()
         {
-
-            Draw.FillColor = Color.Red;
-
-            Graphics.Draw(Slime, 125 + x, 470);
-            Graphics.Draw(Slime, 125 + x, 50);
-            //Graphics.Draw (Slime, 225, 0 + y, 240, 30 + y, 210, 30 + y);
-            //Graphics.Draw (Slime, 325, 0 + y, 340, 30 + y, 310, 30 + y);
-            //Graphics.Draw (Slime, 525, 0 + y, 540, 30 + y, 510, 30 + y);
-            //Graphics.Draw (Slime, 625, 0 + y, 640, 30 + y, 610, 30 + y); 
+        
+        Draw.FillColor = Color.Red;
 
 
+        Graphics.Draw (Slime, 125 + x, 470);
+        Graphics.Draw (Slime,125 + x, 50);
+        //Graphics.Draw (Slime, 225, 0 + y, 240, 30 + y, 210, 30 + y);
+        //Graphics.Draw (Slime, 325, 0 + y, 340, 30 + y, 310, 30 + y);
+        //Graphics.Draw (Slime, 525, 0 + y, 540, 30 + y, 510, 30 + y);
+        //Graphics.Draw (Slime, 625, 0 + y, 640, 30 + y, 610, 30 + y); 
+
+       
         }
 
     }

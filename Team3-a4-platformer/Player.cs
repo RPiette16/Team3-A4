@@ -45,6 +45,8 @@ namespace MohawkGame2D
                 IsJumping = true;
                 VerticalSpeed = -15;
 
+                
+
             }
             if (Input.IsControllerButtonPressed(controllerIndex, ControllerButton.RightFaceDown) && !IsJumping)
             {

@@ -60,8 +60,8 @@ public class Game
     /// </summary>
     public void Update()
     {
-
-
+   
+        
         int controllerIndex = 0;
         switch (currentState)
         {
