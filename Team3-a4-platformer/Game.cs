@@ -16,12 +16,15 @@ public enum GameState
 /// </summary>
 public class Game
 {
+    private Texture2D BG = Graphics.LoadTexture("../../../assets/BG.png");
+    private Texture2D sword = Graphics.LoadTexture("../../../assets/sword.png");
+    Music background_music = Audio.LoadMusic("../../../assets/soundtrack.mp3");
     public GameState currentState = GameState.Running;
     // Place your variables here:
     Player player = new Player();
     Enemy enemy = new Enemy();
     Platform platform = new Platform(0, 0, 0, 0);
-    
+
     // list of platforms
     Platform[] platforms = new Platform[]
     {
@@ -48,6 +51,7 @@ public class Game
     {
         Window.SetTitle("Dungeon Hopper");
         Window.SetSize(800, 600);
+        Audio.Play(background_music);
 
     }
 
@@ -56,6 +60,8 @@ public class Game
     /// </summary>
     public void Update()
     {
+
+
         int controllerIndex = 0;
         switch (currentState)
         {
@@ -64,11 +70,11 @@ public class Game
                 Window.ClearBackground(Color.Green);
                 Text.Color = Color.White;
                 Text.Size = 50;
-                Font Text_Winner = Text.LoadFont("../../../assets/Pixellari.ttf");
-                Text.Draw("You Win!", 260, 200, Text_Winner);
+                Font Text_Winner = Text.LoadFont("../../../assets/FANTASYMAGIST.otf");
+                Text.Draw("You Win!", 300, 200, Text_Winner);
 
                 Text.Size = 30;
-                Text.Draw("Press [ENTER] or [O] to play again!", 200, 280, Text_Winner);
+                Text.Draw("Press [ENTER] or [O] to play again!", 220, 280, Text_Winner);
                 // Reset game if enter is pressed
                 if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
                 {
@@ -91,11 +97,11 @@ public class Game
                 Window.ClearBackground(Color.Red);
                 Text.Color = Color.White;
                 Text.Size = 50;
-                Font Text_GameOver = Text.LoadFont("../../../assets/Pixellari.ttf");
-                Text.Draw("Game Over!", 260, 200, Text_GameOver);
+                Font Text_GameOver = Text.LoadFont("../../../assets/FANTASYMAGIST.otf");
+                Text.Draw("Game Over!", 300, 200, Text_GameOver);
 
                 Text.Size = 30;
-                Text.Draw("Press [ENTER] or [O] to play again!", 200, 280, Text_GameOver);
+                Text.Draw("Press [ENTER] or [O] to play again!", 220, 280, Text_GameOver);
                 // Reset game if enter is pressed
                 if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
                 {
@@ -115,6 +121,7 @@ public class Game
 
             case GameState.Running:
                 Window.ClearBackground(Color.Black);
+                Graphics.Draw(BG, 0, 0);
                 player.renderPlayer();
                 enemy.renderEnemy();
                 enemy.enemyPosition();
@@ -143,6 +150,7 @@ public class Game
         int controllerIndex = 0;
         // Draw the goal
         Draw.FillColor = Color.Green;
+        Graphics.Draw(sword, goalWidth, goalHeight);
         Draw.Rectangle(goalX, goalY, goalWidth, goalHeight);
 
         // Check for collision with the player
