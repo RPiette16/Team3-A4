@@ -24,7 +24,7 @@ public class Game
     Player player = new Player();
     Enemy enemy = new Enemy();
     Platform platform = new Platform(0, 0, 0, 0);
-    
+
     // list of platforms
     Platform[] platforms = new Platform[]
     {
