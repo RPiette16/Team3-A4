@@ -18,6 +18,7 @@ public class Game
 {
     private Texture2D BG = Graphics.LoadTexture("../../../assets/BG.png");
     private Texture2D sword = Graphics.LoadTexture("../../../assets/sword.png");
+    Music background_music = Audio.LoadMusic("../../../assets/soundtrack.mp3");
     public GameState currentState = GameState.Running;
     // Place your variables here:
     Player player = new Player();
@@ -50,6 +51,7 @@ public class Game
     {
         Window.SetTitle("Dungeon Hopper");
         Window.SetSize(800, 600);
+        Audio.Play(background_music);
 
     }
 
