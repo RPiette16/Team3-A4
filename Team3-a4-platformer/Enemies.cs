@@ -26,7 +26,6 @@ namespace MohawkGame2D
         {
             
 
-
             y += Time.DeltaTime * speed * direction;
 
             // Check for collisions with top or bottom and reverse direction if necessary
@@ -70,30 +69,30 @@ namespace MohawkGame2D
                 Height = height;
             }
         }
-        public BoundingBox GetBoundingBox(int x1, int y1, int x2, int y2, int x3, int y3)
+        public BoundingBox GetBoundingBox(int x1, int y1, int x2, int y2)
         {
-            int minX = Math.Min(Math.Min(x1, x2), x3);
-            int maxX = Math.Max(Math.Max(x1, x2), x3);
-            int minY = Math.Min(Math.Min(y1, y2), y3);
-            int maxY = Math.Max(Math.Max(y1, y2), y3);
+            int minX = Math.Min(x1, x2);
+            int maxX = Math.Max(x1, x2);
+            int minY = Math.Min(y1, y2);
+            int maxY = Math.Max(y1, y2);
 
-            return new BoundingBox(minX, minY, maxX - minX, maxY - minY);
+            return new BoundingBox(minX, minY, maxX, maxY);
         }
         public bool CheckCollisionWithPlayer(Player player)
         {
-            // Get the bounding box for each enemy triangle
-            BoundingBox enemyBox1 = GetBoundingBox((int)(125 + x), 500, (int)(140 + x), 530, (int)(110 + x), 530);
-            BoundingBox enemyBox2 = GetBoundingBox((int)(125 + x), 55, (int)(140 + x), 85, (int)(110 + x), 85);
-            BoundingBox enemyBox3 = GetBoundingBox(225, (int)(0 + y), 240, (int)(30 + y), 210, (int)(30 + y));
-            BoundingBox enemyBox4 = GetBoundingBox(325, (int)(0 + y), 340, (int)(30 + y), 310, (int)(30 + y));
-            BoundingBox enemyBox5 = GetBoundingBox(525, (int)(0 + y), 540, (int)(30 + y), 510, (int)(30 + y));
-            BoundingBox enemyBox6 = GetBoundingBox(625, (int)(0 + y), 640, (int)(30 + y), 610, (int)(30 + y));
+            // Get the bounding box for each enemy square
+            BoundingBox enemyBox1 = new BoundingBox((int)(55 + x), 500, 30, 30);
+            BoundingBox enemyBox2 = new BoundingBox((int)(2 + x - 200), 55 , 30, 30);
+            BoundingBox enemyBox3 = new BoundingBox(50, (int) (110 + y), 30, 30);
+            //BoundingBox enemyBox4 = new BoundingBox(210, (int) (110 + y), 30, 30);
+            BoundingBox enemyBox5 = new BoundingBox(310, (int) (110 + y), 30, 30);
+            BoundingBox enemyBox6 = new BoundingBox(710, (int) (-100 + y), 30, 30);
 
             // Check for intersection with the player's bounding box
             return IsIntersecting(player, enemyBox1) ||
                    IsIntersecting(player, enemyBox2) ||
                    IsIntersecting(player, enemyBox3) ||
-                   IsIntersecting(player, enemyBox4) ||
+                   //IsIntersecting(player, enemyBox4) ||
                    IsIntersecting(player, enemyBox5) ||
                    IsIntersecting(player, enemyBox6);
         }
@@ -110,17 +109,18 @@ namespace MohawkGame2D
         public void renderEnemy()
         {
         
-        Draw.FillColor = Color.Red;
+            Draw.FillColor = Color.Clear;
 
 
-        Graphics.Draw (Slime, 125 + x, 470);
-        Graphics.Draw (Slime,125 + x, 50);
-        //Graphics.Draw (Slime, 225, 0 + y, 240, 30 + y, 210, 30 + y);
-        //Graphics.Draw (Slime, 325, 0 + y, 340, 30 + y, 310, 30 + y);
-        //Graphics.Draw (Slime, 525, 0 + y, 540, 30 + y, 510, 30 + y);
-        //Graphics.Draw (Slime, 625, 0 + y, 640, 30 + y, 610, 30 + y); 
+            Graphics.Draw(Slime, (int)(55 + x), 500);
+            Graphics.Draw(Slime, (int)(2 + x - 200), 55);
+            Graphics.Draw(Slime, 50, (int)(110 + y));
+            //Graphics.Draw(Slime, 210, (int)(110 + y));
+            Graphics.Draw(Slime, 310, (int)(110 + y));
+            Graphics.Draw(Slime, 710, (int)(-100 + y));
 
-       
+
+
         }
 
     }

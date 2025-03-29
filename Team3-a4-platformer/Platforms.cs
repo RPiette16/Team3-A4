@@ -10,6 +10,9 @@ namespace MohawkGame2D
     public class Platform
     {
         Texture2D rock = Graphics.LoadTexture("../../../assets/rock.png");
+        Texture2D rock150 = Graphics.LoadTexture("../../../assets/rock150x50.png");
+        Texture2D rock300 = Graphics.LoadTexture("../../../assets/rock300x50.png");
+        //Texture2D wood = Graphics.LoadTexture("../../../assets/wood.png");
         public int X { get; set; }
         public int Y { get; set; }
         public int Width { get; set; }
@@ -48,9 +51,26 @@ namespace MohawkGame2D
             };
             foreach (var platform in platforms)
             {
-                Draw.FillColor = Color.DarkGray;
-                Draw.Rectangle(platform.X, platform.Y, platform.Width, platform.Height);
-                Graphics.Draw(rock, platform.X, platform.Y);
+                if (platform.Width == 300)
+                {
+                    Draw.FillColor = Color.DarkGray;
+                    Draw.Rectangle(platform.X, platform.Y, platform.Width, platform.Height);
+                    Graphics.Draw(rock300, platform.X, platform.Y);
+                }
+
+                else if (platform.Width == 150)
+                {
+                    Draw.FillColor = Color.DarkGray;
+                    Draw.Rectangle(platform.X, platform.Y, platform.Width, platform.Height);
+                    Graphics.Draw(rock150, platform.X, platform.Y);
+                }
+
+                else 
+                {
+                    Draw.FillColor = Color.DarkGray;
+                    Draw.Rectangle(platform.X, platform.Y, platform.Width, platform.Height);
+                    Graphics.Draw(rock, platform.X, platform.Y);
+                }
             }
         }
 
