@@ -18,6 +18,7 @@ namespace MohawkGame2D
         public int VerticalSpeed { get; set; } = 0;
         public bool IsJumping { get; set; } = false;
         public bool IsFalling { get; set; } = false;
+        Sound JumpSound = Audio.LoadSound("../../../assets/Jump.mp3");
 
         public Player()
         {
@@ -38,26 +39,32 @@ namespace MohawkGame2D
             //Controller input
             int controllerIndex = 0;
 
-            
+
             if (Input.IsControllerButtonPressed(controllerIndex, ControllerButton.RightFaceLeft) && !IsJumping)
             {
                 IsJumping = true;
                 VerticalSpeed = -15;
+
+                
+
             }
             if (Input.IsControllerButtonPressed(controllerIndex, ControllerButton.RightFaceDown) && !IsJumping)
             {
                 IsJumping = true;
                 VerticalSpeed = -15;
+
             }
             if (Input.IsControllerButtonPressed(controllerIndex, ControllerButton.RightFaceRight) && !IsJumping)
             {
                 IsJumping = true;
                 VerticalSpeed = -15;
+
             }
             if (Input.IsControllerButtonPressed(controllerIndex, ControllerButton.RightFaceUp) && !IsJumping)
             {
                 IsJumping = true;
                 VerticalSpeed = -15;
+
             }
 
             X += (int)(Input.GetControllerAxis(0, ControllerAxis.LeftX) * Speed);
@@ -75,6 +82,7 @@ namespace MohawkGame2D
             {
                 IsJumping = true;
                 VerticalSpeed = -15;
+                Audio.Play(JumpSound);
             }
 
         }
@@ -107,13 +115,3 @@ namespace MohawkGame2D
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
