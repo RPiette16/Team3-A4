@@ -39,7 +39,7 @@ and don’t look down.
 - Integrated all final textures into game build  
 
 ### Trinity  
-*(To be updated)*
+- Background music
 
 ---
 
