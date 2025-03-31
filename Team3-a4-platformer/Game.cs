@@ -18,12 +18,13 @@ public class Game
 {
     private Texture2D BG = Graphics.LoadTexture("../../../assets/BG.png");
     private Texture2D sword = Graphics.LoadTexture("../../../assets/sword.png");
+    Music background_music = Audio.LoadMusic("../../../assets/soundtrack.mp3");
     public GameState currentState = GameState.Running;
     // Place your variables here:
     Player player = new Player();
     Enemy enemy = new Enemy();
     Platform platform = new Platform(0, 0, 0, 0);
-    
+
     // list of platforms
     Platform[] platforms = new Platform[]
     {
@@ -50,6 +51,7 @@ public class Game
     {
         Window.SetTitle("Dungeon Hopper");
         Window.SetSize(800, 600);
+        Audio.Play(background_music);
 
     }
 
@@ -141,14 +143,14 @@ public class Game
     }
     public void renderGoal()
     {
-        int goalX = 0;
-        int goalY = 0;
+        int goalX = 50;
+        int goalY = 50;
         int goalWidth = 50;
         int goalHeight = 50;
         int controllerIndex = 0;
         // Draw the goal
-        Draw.FillColor = Color.Green;
-        Graphics.Draw(sword, goalWidth, goalHeight);
+        Draw.FillColor = Color.Clear;
+        Graphics.Draw(sword, goalX, goalY);
         Draw.Rectangle(goalX, goalY, goalWidth, goalHeight);
 
         // Check for collision with the player

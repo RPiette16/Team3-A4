@@ -29,6 +29,9 @@ and don’t look down.
 ### Suzanne
 - Programmed game restart on Game Over and Win screens  
 - Integrated and loaded custom fonts
+- Fix enemy visibility and movement
+- Align sword.png to game winning interaction code
+- Fix rock platforms for width longer than 50px
 
 ### Asra  
 - Level prop & environment art (sword, stone, wood platforms)  
@@ -36,7 +39,7 @@ and don’t look down.
 - Integrated all final textures into game build  
 
 ### Trinity  
-*(To be updated)*
+- Background music
 
 ---
 
