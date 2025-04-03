@@ -79,16 +79,22 @@ public class Game
                 if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
                 {
                     Setup();
-                    currentState = GameState.Running;
-                    player.X = 10;
+                    player.X = 2;
                     player.Y = 500;
+                    enemy.x = 0;
+                    enemy.y = 0;
+                    currentState = GameState.Running;
+
                 }
                 if (Input.IsControllerButtonPressed(controllerIndex, ControllerButton.RightFaceDown))
                 {
                     Setup();
-                    currentState = GameState.Running;
-                    player.X = 10;
+                    player.X = 2;
                     player.Y = 500;
+                    enemy.x = 0;
+                    enemy.y = 0;
+                    currentState = GameState.Running;
+
                 }
                 return;
 
@@ -106,16 +112,22 @@ public class Game
                 if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
                 {
                     Setup();
-                    currentState = GameState.Running;
-                    player.X = 10;
+                    player.X = 2;
                     player.Y = 500;
+                    enemy.x = 0;
+                    enemy.y = 0;
+                    currentState = GameState.Running;
+
                 }
                 if (Input.IsControllerButtonDown(controllerIndex, ControllerButton.RightFaceDown))
                 {
                     Setup();
-                    currentState = GameState.Running;
-                    player.X = 10;
+                    player.X = 2;
                     player.Y = 500;
+                    enemy.x = 0;
+                    enemy.y = 0;
+                    currentState = GameState.Running;
+
                 }
                 return;
 
@@ -160,16 +172,23 @@ public class Game
             if (Input.IsKeyboardKeyDown(KeyboardInput.Enter))
             {
                 Setup();
-                currentState = GameState.Running;
-                player.X = 10;
+                player.X = 2;
                 player.Y = 500;
+                enemy.x = 0;
+                enemy.y = 0;
+                currentState = GameState.Running;
+
+
             }
             if (Input.IsControllerButtonDown(controllerIndex, ControllerButton.RightFaceDown))
             {
                 Setup();
-                currentState = GameState.Running;
-                player.X = 10;
+                player.X = 2;
                 player.Y = 500;
+                enemy.x = 0;
+                enemy.y = 0;
+                currentState = GameState.Running;
+
             }
             return;
 

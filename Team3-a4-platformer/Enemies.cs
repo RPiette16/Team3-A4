@@ -9,8 +9,8 @@ namespace MohawkGame2D
     public class Enemy
     {
         Texture2D Slime = Graphics.LoadTexture("../../../assets/Slime.png");
-        float y;
-        float x;
+        public float y;
+        public float x;
         float speed = 200;
         float direction = 1;
         float maxY = 600;

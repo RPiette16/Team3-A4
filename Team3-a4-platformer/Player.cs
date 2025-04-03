@@ -9,7 +9,7 @@ namespace MohawkGame2D
 {
     public class Player
     {
-        Texture2D playersprite = Graphics.LoadTexture("../../../assets/playersprite.png");
+        Texture2D playersprite = Graphics.LoadTexture("../../../assets/playersprite45x49.png");
         public int X { get; set; }
         public int Y { get; set; }
         public int Width { get; set; }
@@ -22,15 +22,14 @@ namespace MohawkGame2D
 
         public Player()
         {
-            X = 10;
+            X = 2;
             Y = 500;
-            Width = 30;
-            Height = 30;
+            Width = 45;
+            Height = 49;
         }
         public void renderPlayer()
         {
-            Draw.FillColor = Color.Magenta;
-            Draw.Rectangle(X, Y, Width, Height);
+            Draw.FillColor = Color.Clear;
             Graphics.Draw(playersprite, X, Y);
         }
 
@@ -62,6 +61,7 @@ namespace MohawkGame2D
             }
             if (Input.IsControllerButtonPressed(controllerIndex, ControllerButton.RightFaceUp) && !IsJumping)
             {
+
                 IsJumping = true;
                 VerticalSpeed = -15;
 
@@ -72,6 +72,7 @@ namespace MohawkGame2D
             //Keyboard input
             if (Input.IsKeyboardKeyDown(KeyboardInput.Right) && X + Width < 800)  // Right boundary
             {
+
                 X += Speed;
             }
             if (Input.IsKeyboardKeyDown(KeyboardInput.Left) && X > 0)  // Left boundary
